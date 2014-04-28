@@ -33,7 +33,7 @@ class << ActiveRecord::Base
       where(conditions)
     }
     
-    has_many :mattr, :as => :target
+    has_many :mattr, :as => :target, :dependent => :destroy
 
     options.each do | meta_attr |
       attr_accessor meta_attr.to_sym
