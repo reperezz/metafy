@@ -22,7 +22,7 @@ class << ActiveRecord::Base
       meta_selects.push("m_#{col.to_s}.meta_value AS #{col.to_s}")
     end
 
-    default_scope :select => meta_selects, :joins => meta_joins
+    default_scope {select(meta_selects).joins(meta_joins)}
 
     scope :meta_where, lambda { |options|
       conditions = {}
