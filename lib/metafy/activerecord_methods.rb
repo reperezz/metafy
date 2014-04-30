@@ -41,8 +41,4 @@ class << ActiveRecord::Base
 
     include Metafy::Base
   end
-  
-  def meta_keys
-    metafied? ? @meta_keys ||= self.mattr.pluck(:meta_key) : nil
-  end
 end
