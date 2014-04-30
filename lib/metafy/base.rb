@@ -98,5 +98,10 @@ module Metafy
 
       attributes.nil? ? super(nil) : super(attributes.except(*self.metafied_attrs))
     end
+    
+
+    def meta_keys
+      @meta_keys ||= self.mattr.pluck(:meta_key)
+    end
   end
 end
